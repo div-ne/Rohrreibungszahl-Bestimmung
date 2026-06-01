@@ -210,9 +210,9 @@ def calculate_lambda(fluid, temperature_c, pressure_bar, diameter_mm, velocity_m
         [
             ("Hagen-Poiseuille", lambda_hagenpoiseulle, "laminare Strömung"),
             ("Blasius", lambda_blasius, "hydraulisch glattes Rohr, Re < 100000"),
-            ("Nikuradse", lambda_nikuradse, "hydraulisch raues Rohr"),
             ("Prandtl", lambda_prandtl, "hydraulisch glattes Rohr, Re > 100000"),
             ("Colebrook-White", lambda_colebrookwhite, "Übergangsbereich zwischen hydraulisch glatt und hydraulisch rau"),
+            ("Nikuradse", lambda_nikuradse, "hydraulisch raues Rohr"),
         ],
         columns=["Formel", "Rohrreibungszahl λ [-]", "Zuordnung"],
     )
@@ -295,9 +295,9 @@ Die App zeigt nicht nur die **Rohrreibungszahl λ**, sondern auch die **ausgewä
 Berücksichtigt werden:
 - Gesetz von **Hagen-Poiseuille**,
 - Formel nach **Blasius**,
-- Formel nach **Nikuradse**,
 - Formel nach **Prandtl**,
-- sowie **Colebrook-White**.
+- sowie **Colebrook-White**,
+- Formel nach **Nikuradse**.
 
 Über den Bereich **Formeln im Vergleich** kannst du zusätzlich die Werte aller berücksichtigten Gleichungen öffnen und direkt miteinander vergleichen.
 
