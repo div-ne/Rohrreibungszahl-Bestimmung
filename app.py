@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 import CoolProp.CoolProp as cp
 
-APP_TITLE = "Bestimmung-Rohrreibungszahl"
+APP_TITLE = "Rohrreibungszahl-Bestimmung"
 APP_VERSION = "0.7.5V"
 MOODY_SOURCE = "https://en.wikipedia.org/wiki/Moody_chart"
 REPO_URL = "https://github.com/div-ne/Bestimmung-Rohrreibungszahl/"
@@ -234,6 +234,7 @@ st.caption("Berechnung der Rohrreibungszahl auf Basis von Fluid, Temperatur, Dru
 left, right = st.columns([1, 1.2])
 
 with left:
+    st.subheader("Eingabe")
     fluid_label = st.selectbox("Fluid", list(FLUIDS.keys()), index=list(FLUIDS.keys()).index("Wasser"))
     fluid = FLUIDS[fluid_label]
     temperature_c = st.number_input("Temperatur [°C]", value=10.0, step=0.1)
@@ -264,7 +265,7 @@ with right:
             st.download_button(
                 label="CSV herunterladen",
                 data=csv_content.encode("utf-8-sig"),
-                file_name="Bestimmung-Rohrreibungszahl.csv",
+                file_name="Rohrreibungszahl-Bestimmung.csv",
                 mime="text/csv",
                 use_container_width=True,
             )
