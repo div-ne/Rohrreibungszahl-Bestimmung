@@ -4,10 +4,9 @@ import pandas as pd
 import streamlit as st
 import CoolProp.CoolProp as cp
 
-APP_TITLE = "Rohrreibungszahl-Bestimmung"
-APP_VERSION = "0.7.5V"
+APP_TITLE = "Rohrreibungszahl Bestimmung"
+APP_VERSION = "v1.0.0"
 MOODY_SOURCE = "https://en.wikipedia.org/wiki/Moody_chart"
-REPO_URL = "https://github.com/div-ne/Bestimmung-Rohrreibungszahl/"
 MOODY_IMAGE = os.path.join(os.path.dirname(__file__), "assets", "moody-diagram.jpg")
 
 ROUGHNESS_ROWS = [
@@ -280,31 +279,14 @@ with st.expander("Anleitung"):
         f"""
 Mit diesem Tool wird die **Rohrreibungszahl λ** auf Grundlage der übergebenen Stoff- und Strömungsdaten berechnet.
 
-Dafür gibst du ein:
-- **Fluid**,
-- **Temperatur**,
-- **Druck**,
-- **Innendurchmesser**,
-- **Strömungsgeschwindigkeit**,
-- **Rohrauigkeit**.
-
-Aus diesen Eingaben wird zunächst über **CoolProp** die kinematische Viskosität bestimmt. Anschließend wird daraus die **Reynolds-Zahl** berechnet und die Rohrreibungszahl mit mehreren Formeln bewertet.
-
-Die App zeigt nicht nur die **Rohrreibungszahl λ**, sondern auch die **ausgewählte Berechnungsgrundlage** und den zugehörigen **Strömungstyp** an. So ist direkt erkennbar, ob der berechnete Wert einer laminaren Strömung, einem hydraulisch glatten Rohr, einem hydraulisch rauen Rohr oder dem Übergangsbereich zugeordnet wurde.
-
 Berücksichtigt werden:
-- Gesetz von **Hagen-Poiseuille**,
-- Formel nach **Blasius**,
-- Formel nach **Prandtl**,
-- sowie **Colebrook-White**,
-- Formel nach **Nikuradse**.
+- Gesetz von Hagen-Poiseuille,
+- Formel nach Blasiu,
+- Formel nach Prandtl,
+- sowie Colebrook-White,
+- Formel nach Nikuradse.
 
-Über den Bereich **Formeln im Vergleich** kannst du zusätzlich die Werte aller berücksichtigten Gleichungen öffnen und direkt miteinander vergleichen.
-
-Die Tabelle **Rohrrauheitswerte** unten hilft bei der Wahl plausibler Eingaben für die Rauheit k.
-
-Repository:
-[{REPO_URL}]({REPO_URL})
+Repository: https://github.com/div-ne/Bestimmung-Rohrreibungszahl/
 """
     )
 with st.expander("Rohrrauheitswerte"):
